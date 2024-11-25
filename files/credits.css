@@ -1,0 +1,198 @@
+@font-face {
+    font-family: harryPotter;
+    src: url(../fonts/harry_p/HARRYP__.TTF);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Yusei+Magic&display=swap');
+
+html {
+    font-size: 16px;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Yusei Magic';
+    background-image: url(../images/background03.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+
+    margin: auto;
+    color: #ffd800;
+}
+
+header {
+    width: 100%;
+    height: 6%;
+    font-family: harryPotter;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+    height: 82%;
+
+    animation: aparecer 1s forwards;
+}
+
+main > .mainContainer {
+    width: 90%;
+    height: 100%;
+    max-width: 345px;
+
+    background-color: #0f2d34f4;
+    box-shadow: 10px 10px 20px #000000;
+    border-radius: 1rem;
+    text-shadow: 4px 4px 3px #111111;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+main > nav {
+    height: 10%;
+}
+
+main > .mainContainer > .credito {
+    width: 90%;
+    height: 15%;
+    max-width: 310px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    background-color: #1b525ff4;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 20px #000000;
+
+    animation: aparecerCredito 1s forwards;
+    transition: all 0.3s ease;
+}
+
+/* Añadir retraso a cada crédito para que aparezcan en secuencia */
+.credito:nth-child(1) {
+    animation-delay: 0.5s;
+}
+.credito:nth-child(2) {
+    animation-delay: 1s;
+}
+.credito:nth-child(3) {
+    animation-delay: 1.5s;
+}
+.credito:nth-child(4) {
+    animation-delay: 2s;
+}
+.credito:nth-child(5) {
+    animation-delay: 2.5s;
+}
+
+main > .mainContainer > .credito > img {
+    width: 4.5rem;
+    height: 75%;
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px #000000;
+    margin-left: 0.75rem;
+}
+
+main > .mainContainer > .credito > .texto {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.7rem;
+    text-align: center;
+
+    margin-right: 0.8rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 6%;
+    text-align: center;
+
+    position: absolute;
+    bottom: 0%;
+}
+
+nav {
+    width: 5rem;
+}
+
+nav > a {
+    all: unset;
+    width: 100%;
+    height: 100%;
+}
+
+nav > a > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: 10px 10px 20px #000000;
+    border-radius: 1rem;
+    width: 100%;
+    background-color: #5c469a;
+}
+
+nav > a > button:hover {
+    transform: scale(1.05);
+    background-color: #115b90;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.6);
+}
+/* Animación de aparición */
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de aparición individual de cada crédito */
+@keyframes aparecerCredito {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

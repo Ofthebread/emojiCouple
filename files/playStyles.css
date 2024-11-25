@@ -1,0 +1,752 @@
+/* Importando fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=Permanent+Marker&family=UnifrakturMaguntia&family=Yusei+Magic&display=swap');
+
+/* Definición de una fuente personalizada para el estilo de "Harry Potter" */
+@font-face {
+    font-family: harryPotter;
+    src: url(../fonts/harry_p/HARRYP__.TTF);
+}
+
+/* Estilos generales para resetear márgenes y padding */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+/* Estilo de fondo para la página */
+html {
+    background: url('../images/background04.jpg') no-repeat center/cover fixed;
+    height: 100%;
+    width: 100%;
+}
+
+/* Estilo general del cuerpo de la página */
+body {
+    font-family: sans-serif;
+    color: #ffd800;
+    text-shadow: 4px 4px 3px #111111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+/* Contenedor principal con un fondo oscuro y bordes redondeados */
+.mainContainer {
+    width: 100%;
+    max-width: 1200px;
+    height: 60%;
+    padding: 1rem;
+    background-color: #0f2d34f4;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 20px #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilo para el encabezado dentro del contenedor principal */
+.mainContainer>header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.27rem;
+}
+
+h1 {
+    font-family: harryPotter;
+    font-size: 4rem;
+}
+
+/* Estilo para el botón de inicio */
+.mainContainer>header>button.startButton {
+    font-family: harryPotter;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    width: 45%;
+    min-width: 126px;
+    max-width: 400px;
+    height: 4%;
+    min-height: 57px;
+    position: absolute;
+    top: 45%;
+    z-index: 10;
+    /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Estilo general de los botones */
+button {
+    width: 30%;
+    height: 30%;
+    font-family: sans-serif;
+    color: #ffd800;
+    text-shadow: 4px 4px 3px #111111;
+    background-color: #5c469a;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 10px 10px 20px #000000;
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Efecto de hover sobre los botones */
+button:hover {
+    background-color: #115b90;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+    transition: 0.5s;
+    /* Aumenta el tamaño del botón al pasar el cursor */
+}
+
+/* Estilo para botones deshabilitados */
+button:disabled {
+    cursor: not-allowed;
+    background-color: #555;
+    color: #aaa;
+    box-shadow: none;
+}
+
+/* Estilo para el pie de página */
+footer {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    justify-content: end;
+    align-items: center;
+}
+
+footer>button {
+    width: 25%;
+    min-width: 60px;
+    max-width: 75px;
+    height: 60%;
+}
+
+footer>button>a>img {
+    height: 100%;
+}
+
+footer>p {
+    font-size: 1rem;
+}
+
+/* Enlaces */
+a {
+    all: unset;
+    /* Elimina el estilo por defecto de los enlaces */
+    width: 50%;
+    color: #f5f0a1;
+    font-size: 1.7rem;
+}
+
+p {
+    font-family: 'Yusei Magic';
+    position: absolute;
+    bottom: 0%;
+    text-shadow: 5px 5px 5px #111111;
+}
+
+/* Main */
+.mainContainer>main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+/* Información en la parte superior de la pantalla */
+.information {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 3rem;
+    font-size: 1.5rem;
+    font-family: 'Yusei Magic';
+}
+
+.cards {
+    width: 100%;
+    height: 90%;
+}
+
+/* Estilo para el contenedor de las cartas */
+.cards-container {
+    perspective: 1000px;
+    /* Perspectiva 3D para las cartas */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.card-container {
+    width: 20%;
+    height: 20%;
+
+    display: flex;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    font-size: 2.5rem;
+    transform-style: preserve-3d;
+    /* Para mantener la rotación 3D */
+    transition: transform 0.5s;
+    box-shadow: 10px 10px 20px #000000;
+    border: 1px solid #ffd800;
+    border-radius: 0.3rem;
+}
+
+/* Efecto de rotación para las cartas */
+.card:hover {
+    transform: scale(1.05);
+    background-color: #115b90;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Frente y reverso de las cartas */
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* Oculta el reverso al voltear la carta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+}
+
+/* Fondo de la carta */
+.card .front {
+    background: url('../images/logo.webp') center/cover no-repeat;
+    background-color: #091c20f4;
+    background-size: contain;
+}
+
+.card .back {
+    color: #fff;
+    transform: rotateY(180deg);
+    /* Gira la carta al revés */
+    background-color: #1f5f6cf4;
+    background-color: #1e1632;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+    /* Aplicado cuando la carta se voltea */
+}
+
+/* Mantener la pantalla de winning oculta */
+.winning {
+    display: none;
+}
+
+/* Pantallas de fin (ganador o perdedor) */
+.winningScreen,
+.losingScreen {
+    font-family: harryPotter;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    color: #ffd800;
+    font-size: 4rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(44,
+            44,
+            72,
+            0.75);
+    /* Fondo oscuro con transparencia */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Estilo del botón de reinicio */
+.resetButton {
+    max-width: 6rem;
+    height: 5%;
+    font-size: 1.2rem;
+    background-color: #5c469a;
+}
+
+/* Estilo para los botones de dificultad */
+.difficulty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Yusei Magic';
+}
+
+.buttonDifficulty {
+    width: 33%;
+    height: 4rem;
+    font-size: 1.4rem;
+    color: #ffd800;
+    text-shadow: 4px 4px 3px #111111;
+    background-color: #5c469a;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 20px #000000;
+}
+
+.buttonDifficulty:hover {
+    background-color: #115b90;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+}
+
+/* Media Queries para ajustar la visualización en distintos tamaños de pantalla */
+/* Mobile S */
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        margin-top: 1rem;
+        font-size: 3rem;
+    }
+
+    .h1Difficulty {
+        font-size: 5rem;
+    }
+
+    .mainContainer {
+        height: 30%;
+        width: 90%;
+    }
+
+    .mainContainer>header>button.startButton {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .difficulty {
+        height: 100%;
+        position: relative;
+        top: 5rem;
+        font-size: 1.5rem;
+    }
+
+    .buttonDifficulty {
+        width: 45%;
+        height: 3.5rem;
+    }
+
+    .boardDisplay {
+        display: none;
+    }
+
+    .mainGameStarted {
+        height: 70%;
+        width: 90%;
+    }
+
+    .mainContainerGameStartedBoard {
+        height: 90%;
+    }
+
+    .information {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .cards-container {
+        height: 90%;
+        position: relative;
+        top: 2rem;
+    }
+}
+
+/* Mobile M */
+@media screen and (min-width: 375px) and (max-width: 424px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        margin-top: 3.5rem;
+        font-size: 3rem;
+    }
+
+    .h1Difficulty {
+        font-size: 4rem;
+    }
+
+    .information {
+        margin-top: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .mainContainer {
+        height: 50%;
+        width: 90%;
+    }
+
+    /* Error que deja escribir en elementos
+    outline: none;
+    user-select: none;
+*/
+    .mainContainer>header>button.startButton {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .difficulty {
+        height: 60%;
+        position: relative;
+        top: 3rem;
+        font-size: 1rem;
+    }
+
+
+    .buttonDifficulty {
+        width: 45%;
+        height: 3.5rem;
+        font-size: 1rem;
+    }
+
+    .boardDisplay {
+        display: none;
+    }
+
+    .mainGameStarted {
+        height: 70%;
+        width: 90%;
+    }
+
+    .mainContainerGameStartedBoard {
+        height: 90%;
+    }
+
+    .cards-container {
+        height: 90%;
+        position: relative;
+        top: 2rem;
+    }
+
+    .difficultyFooterButton {
+        position: relative;
+        bottom: 100px;
+    }
+
+
+
+    .footerButton {
+        height: 45%;
+    }
+}
+
+/* Mobile L */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        margin-top: 1rem;
+        font-size: 4rem;
+    }
+
+    .h1Difficulty {
+        font-size: 5rem;
+    }
+
+    .information {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .mainContainer {
+        height: 30%;
+        width: 90%;
+    }
+
+    /* Error que deja escribir en elementos
+    outline: none;
+    user-select: none;
+*/
+    .mainContainer>header>button.startButton {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .information {
+        width: 50%;
+    }
+
+    .difficulty {
+        height: 100%;
+        position: relative;
+        top: 4.5rem;
+        font-size: 1.5rem;
+    }
+
+    .buttonDifficulty {
+        width: 45%;
+        height: 3.5rem;
+    }
+
+    .boardDisplay {
+        display: none;
+    }
+
+    .mainGameStarted {
+        height: 70%;
+        width: 90%;
+    }
+
+    .mainContainerGameStartedBoard {
+        height: 90%;
+    }
+
+    .cards-container {
+        height: 90%;
+        position: relative;
+        top: 2rem;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        margin-top: 1rem;
+        font-size: 5rem;
+    }
+
+    .h1Difficulty {
+        font-size: 6rem;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .mainContainer {
+        height: 35%;
+        width: 60%;
+    }
+
+    .mainContainer>header>button.startButton {
+        width: 40%;
+        height: 7.5%;
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .difficulty {
+        height: 100%;
+        position: relative;
+        top: 5rem;
+        font-size: 2.2rem;
+    }
+
+    .buttonDifficulty {
+        width: 15rem;
+        height: 3.5rem;
+        font-size: 1.7rem;
+    }
+
+    .boardDisplay {
+        display: none;
+    }
+
+    .information {
+        margin-top: 2rem;
+        font-size: 1.7rem;
+    }
+
+    .mainGameStarted {
+        height: 70%;
+        width: 70%;
+    }
+
+    .mainContainerGameStartedBoard {
+        height: 90%;
+    }
+
+    .cards-container {
+        height: 90%;
+        position: relative;
+        top: 2rem;
+    }
+}
+
+/* Laptop */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        margin-top: 1rem;
+        font-size: 6.5rem;
+    }
+
+    .h1Difficulty {
+        font-size: 7rem;
+        margin-top: 3rem;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .mainContainer {
+        height: 40%;
+        width: 60%;
+    }
+
+    .mainContainer>header>button.startButton {
+        width: 30%;
+        height: 7.5%;
+        font-size: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .difficulty {
+        height: 100%;
+        position: relative;
+        top: 5rem;
+        font-size: 2.5rem;
+    }
+
+    .buttonDifficulty {
+        width: 15rem;
+        height: 3.5rem;
+        font-size: 1.7rem;
+    }
+
+    .boardDisplay {
+        display: none;
+    }
+
+    .information {
+        margin-top: 2rem;
+        font-size: 1.7rem;
+    }
+
+    .mainGameStarted {
+        height: 70%;
+        width: 70%;
+    }
+
+    .mainContainerGameStartedBoard {
+        height: 90%;
+    }
+
+    .cards-container {
+        height: 90%;
+        position: relative;
+        top: 2rem;
+    }
+}
+
+/* 1440p */
+@media screen and (min-width: 1440px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        margin-top: 1.5rem;
+        font-size: 7rem;
+    }
+
+    .h1Difficulty {
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .mainContainer {
+        height: 45%;
+        width: 45%;
+    }
+
+    .mainContainer>header>button.startButton {
+        width: 30%;
+        height: 7.5%;
+        font-size: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .difficulty {
+        height: 100%;
+        position: relative;
+        top: 5rem;
+        font-size: 2.5rem;
+    }
+
+    .buttonDifficulty {
+        width: 15rem;
+        height: 3.5rem;
+        font-size: 1.7rem;
+    }
+
+    .boardDisplay {
+        display: none;
+    }
+
+    .information {
+        margin-top: 2rem;
+        font-size: 1.7rem;
+    }
+
+    .mainGameStarted {
+        height: 70%;
+        width: 55%;
+    }
+
+    .mainContainerGameStartedBoard {
+        height: 90%;
+    }
+
+    .cards-container {
+        height: 90%;
+        position: relative;
+        top: 2rem;
+    }
+}

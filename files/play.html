@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Parejas de Emojis</title>
+        <link rel="stylesheet" href="../files/playStyles.css" />
+    </head>
+    <body>
+        <div class="mainContainer">
+            <header>
+                <h1>Parejas de Emojis</h1>
+                <button class="startButton button">DIFICULTAD</button>
+            </header>
+
+            <main>
+                <section class="difficulty"></section>
+
+                <section class="information">
+                    <div class="timer">
+                        <div class="timerTitle"></div>
+                    </div>
+                    <div class="attempts">
+                        <div class="attemptsTitle"></div>
+                    </div>
+                </section>
+
+                <section class="cards">
+                    <div class="cards-container"></div>
+                </section>
+
+                <div class="winning"></div>
+                <div class="losing"></div>
+            </main>
+            <footer>
+                <button class="footerButton">
+                    <a href="../files/index.html"
+                        ><img src="../images/return.png"
+                    /></a>
+                </button>
+            </footer>
+        </div>
+        <p>Ejército de Dumbledore &copy; 2024</p>
+
+        <audio
+            class="cardHover"
+            src="../sounds/cardFlippedSound.mp3"
+            preload="auto"
+        ></audio>
+        <audio
+            class="success"
+            src="../sounds/success1.mp3"
+            preload="auto"
+        ></audio>
+        <audio
+            class="losingAudio"
+            src="../sounds/losing.mp3"
+            preload="auto"
+        ></audio>
+        <audio class="fail" src="../sounds/fail.mp3" preload="auto"></audio>
+        <audio class="winAudio" src="../sounds/win.mp3" preload="auto"></audio>
+        <audio
+            class="ambientSound"
+            src="../sounds/playing.mp3"
+            preload="auto"
+        ></audio>
+        <script src="../files/playScript.js"></script>
+    </body>
+</html>

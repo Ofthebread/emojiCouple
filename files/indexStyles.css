@@ -1,0 +1,190 @@
+@font-face {
+    font-family: harryPotter;
+    src: url(../fonts/harry_p/HARRYP__.TTF);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+html {
+    font-family: 'Yusei Magic';
+}
+/* Estilos generales */
+body {
+    font-family: 'Yusei Magic'; /* Fuente mágica */
+    background-image: url('../images/background02.jpg'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffd800; /* Texto principal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+a > button {
+    font-size: 1rem;
+}
+main {
+    width: 100%;
+    height: 100%;
+}
+/* Estilo para el título (h1) */
+h1 {
+    font-family: harryPotter;
+    font-size: 4rem;
+    color: #ffd800; /* Color del texto */
+    text-shadow: 4px 4px 3px #111111; /* Sombra para hacer el texto más llamativo */
+    padding: 15px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Fondo semi-transparente para facilitar la lectura */
+.container {
+    background-color: #0f2d34f4; /* Fondo con un poco más de transparencia */
+    border-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    max-width: 25rem; /* Ancho máximo del contenedor */
+    height: 80%;
+    width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+    box-shadow: 10px 10px 20px #000000; /* Sombra más intensa para un efecto de profundidad */
+}
+
+/* Logo */
+.logo-container {
+    margin-bottom: 70px;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(10px 10px 10px rgba(5, 5, 5, 1));
+}
+
+/* Botones de navegación */
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: -3rem;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-button {
+    font-family: 'Yusei Magic';
+    background-color: #5c469a;
+    color: #ffd800;
+    border: none;
+    padding: 1.2rem 2.2rem;
+    cursor: pointer;
+    border-radius: 0.6rem;
+    transition: background-color 0.3s;
+    width: 50%; /* Ancho aumentado */
+    height: 100%;
+    box-shadow: 5px 5px 10px #000000;
+    text-shadow: 4px 4px 3px #111111;
+}
+
+.nav-button:hover {
+    background-color: #115b90;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.6);
+}
+footer {
+    color: #ffd800;
+    text-align: center;
+}
+
+/* Diseño responsive */
+@media (max-width: 480px) {
+    .container {
+        max-width: 20rem;
+        padding: 1rem;
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-button {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+}
+
+/* Dispositivos medianos (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        max-width: 30rem;
+        padding: 2rem;
+        gap: 25px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .nav-button {
+        width: 80%;
+        font-size: 1.4rem;
+    }
+
+    .logo {
+        max-width: 180px;
+    }
+}
+
+/* Pantallas grandes */
+
+@media (min-width: 769px) {
+    .container {
+        max-width: 35rem;
+        padding: 2.5rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .nav-button {
+        width: 60%;
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        max-width: 200px;
+    }
+}
